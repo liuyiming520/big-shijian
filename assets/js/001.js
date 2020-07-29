@@ -49,7 +49,7 @@ $(function () {
         e.preventDefault()
         $.ajax({
             url: 'http://ajax.frontend.itheima.net/api/login',
-            type: 'post',
+            type: 'POST',
             data: $(this).serialize(),
             success: function (str) {
                 if (str.status !== 0) {
@@ -60,7 +60,7 @@ $(function () {
                 // 存token字符串 重要 存本地
                 localStorage.setItem('token', str.token)
 
-                // location.href = '/index.html'
+                location.href = '/index.html'
             }
         })
     })
