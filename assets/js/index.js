@@ -29,17 +29,18 @@ function getUser() {
             renderAvatar(str.data)
         },
         // complete: function (sty) {
-            
+
         // }
 
     })
 }
 function renderAvatar(u) {
-    var name = u.username || u.nickname
+    var name = u.nickname || u.username
     console.log(u);
     $('#welCome').html('欢迎&nbsp;' + name)
     if (u.user_pic !== null) {
-        $('.layui-nav-img').attr('src', user_pic).show()
+        $('.layui-nav-img').attr('src', u.user_pic).show()
+        $('.text-avatar').hide()
     } else {
         $('.layui-nav-img').hide()
         var fl = name[0].toUpperCase()
